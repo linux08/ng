@@ -23,13 +23,12 @@ import { AlignRightIcon } from '@/assets/AlignRightIcon';
 import { DifficultyLevel, QuestProperty, QuestValue } from '@/styles/QuestCardStyles';
 import SwordActive from '@/assets/SwordActive';
 import SwordInActive from '@/assets/SwordInActive';
-import { getAllQuests, getQuestData } from '@/services/quests/quest.service';
+import { getAllQuests, getQuestData } from '../../lib/load-quest';
 import { useQuery } from '@tanstack/react-query';
 
 export async function getStaticPaths() {
-	const res = await getAllQuests();
-	const questData = await res.data;
-	const paths = questData.map((quest: QuestProps) => {
+	const questData = await getAllQuests();
+	const paths = questData?.map((quest: QuestProps) => {
 		return {
 			params: {
 				id: `${quest.id}`
@@ -42,10 +41,13 @@ export async function getStaticPaths() {
 	};
 }
 
-export const getStaticProps = async ({ id }) => {
-	const res = await getQuestData(1);
-	const questData = await res.data;
-	return { props: { questData } };
+export const getStaticProps = async ({ params }) => {
+	try {
+		const questData = await getQuestData(params.id);
+		return { props: { questData } };
+	} catch (err) {
+		return { props: { questData: [] } };
+	}
 };
 
 export default function Quest({ questData }) {

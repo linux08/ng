@@ -19,4 +19,4 @@ npm run lint
 ```
 
 
-[Preview](https://friendly-kleicha-167bba.netlify.app/).
+[Preview](https://ng-frontend-application-abimbola130.vercel.app/).

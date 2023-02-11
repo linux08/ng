@@ -59,7 +59,7 @@ export const QuestProperty = styled.p`
 	font-family: 'Lato', sans-serif;
 	font-style: normal;
 	font-weight: 400;
-	font-size: '14px';
+	font-size: 12px;
 	color: #bea77e;
 	display: flex;
 	align-items: flex-start;
@@ -82,7 +82,7 @@ export const QuestValue = styled.p`
 	font-family: 'Lato', sans-serif;
 	font-style: normal;
 	font-weight: 400;
-	font-size: '14px';
+	font-size: 12px;
 	line-height: 14px;
 	color: #ffffff;
 	text-align: left;

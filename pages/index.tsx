@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next';
 import { Header } from '@/components/Header';
 import { QuestCardComp } from '@/components/QuestCard';
 import { MainQuestGridStyles } from '@/styles/HomePageStyles';
-import { getAllQuests } from '@/services/quests/quest.service';
+import { getAllQuests } from '../lib/load-quest';
 import { IQuests } from '../interfaces/quest.interface';
 import { useQuery } from '@tanstack/react-query';
 
@@ -37,8 +37,7 @@ const Home: React.FC<IQuests> = ({ quests }) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-	const res = await getAllQuests();
-	const quests = res.data;
+	const quests = await getAllQuests();
 
 	return {
 		props: {

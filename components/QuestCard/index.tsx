@@ -17,8 +17,10 @@ import SwordInActive from '@/assets/SwordInActive';
 import { QuestProps } from '../../interfaces/quest.interface';
 
 export const QuestCardComp: React.FC<any> = ({ quests }) => {
+	console.log('--f0-dfd', quests);
+
 	const truncate = (description: string) => {
-		const newDescription = description.substring(0, 10);
+		const newDescription = description?.substring(0, 10);
 		return `${newDescription}.`;
 	};
 
