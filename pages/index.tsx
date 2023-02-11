@@ -4,7 +4,7 @@ import { Header } from '@/components/Header';
 import { QuestCardComp } from '@/components/QuestCard';
 import { MainQuestGridStyles } from '@/styles/HomePageStyles';
 import { getAllQuests } from '@/services/quests/quest.service';
-import { IQuests } from '@/interfaces/quests.interface';
+import { IQuests } from '../interfaces/quest.interface';
 import { useQuery } from '@tanstack/react-query';
 
 const Home: React.FC<IQuests> = ({ quests }) => {
