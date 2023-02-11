@@ -42,6 +42,12 @@ export async function getStaticPaths() {
 	};
 }
 
+export const getStaticProps = async ({ id }) => {
+	const res = await getQuestData(1);
+	const questData = await res.data;
+	return { props: { questData } };
+};
+
 export default function Quest({ questData }) {
 	let data = questData;
 	const router = useRouter();
@@ -142,9 +148,3 @@ export default function Quest({ questData }) {
 		</div>
 	);
 }
-
-export const getStaticProps = async ({ id }) => {
-	const res = await getQuestData(1);
-	const questData = await res.data;
-	return { props: { questData } };
-};
