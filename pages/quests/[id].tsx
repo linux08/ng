@@ -43,7 +43,7 @@ export async function getStaticPaths() {
 	};
 }
 
-export default function ({ questData }) {
+export default function Quest({ questData }) {
 	let data = questData;
 	const router = useRouter();
 
