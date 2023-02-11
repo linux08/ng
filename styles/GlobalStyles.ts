@@ -4,15 +4,14 @@ const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
 //========================================================================================================
 // GENERAL
 //========================================================================================================
-* {
-	box-sizing: border-box;
-}
-*::before {
-	box-sizing: border-box;
-}
-*::after {
-	box-sizing: border-box;
-}
+
+*,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
 
 body {
   background-color: ${({ theme }) => theme.colors.black};

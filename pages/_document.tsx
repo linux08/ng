@@ -4,7 +4,14 @@ import { ServerStyleSheet } from 'styled-components';
 export default function NGDocument() {
 	return (
 		<Html lang='en'>
-			<Head />
+			<Head>
+				<link rel='preconnect' href='https://fonts.googleapis.com' />
+				<link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin={`${true}`} />
+				<link
+					href='https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato&display=swap'
+					rel='stylesheet'
+				></link>
+			</Head>
 			<body>
 				<Main />
 				<NextScript />

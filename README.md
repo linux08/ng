@@ -44,11 +44,3 @@ You can find the Figma design to implement [here](https://www.figma.com/file/NsO
 - Write tests using Cypress
 - Add any improvements you think are relevant
 
-## Submitting the test
-
-1. Publish your code to a public repository or add [JeremyTheintz](https://github.com/JeremyTheintz) as a collaborator to your private repository.
-2. Send an email to [jobs@nodeguardians.io](mailto:jobs@nodeguardians.io) with the following information:
-   - The link to your repository
-   - Your resume as an attachment
-   - Any other relevant information
-3. In the email subject, please write: "Technical Test for Frontend Developer" + your name
