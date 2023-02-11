@@ -11,17 +11,16 @@ import {
 	BodySkills,
 	Content,
 	Footer,
-	Wrapper,
 	SecondSkills,
 	MWrapper
-} from './QuestStyles';
+} from '../../styles/QuestStyles';
 import { MainQuestGridStyles } from '@/styles/HomePageStyles';
-import { QuestProps } from '@/interfaces/quests.interface';
+import { QuestProps } from '../../interfaces/quest.interface';
 import RewardImage from '@assets/quest-reward-exp.svg';
 import { CloseIcon } from '@/assets/CloseIcon';
 import { AlignLeftIcon } from '@/assets/AlignLeftIcon';
 import { AlignRightIcon } from '@/assets/AlignRightIcon';
-import { DifficultyLevel, QuestProperty, QuestValue } from '@components/QuestCard/QuestCardStyles';
+import { DifficultyLevel, QuestProperty, QuestValue } from '@/styles/QuestCardStyles';
 import SwordActive from '@/assets/SwordActive';
 import SwordInActive from '@/assets/SwordInActive';
 import { getAllQuests, getQuestData } from '@/services/quests/quest.service';
@@ -30,7 +29,7 @@ import { useQuery } from '@tanstack/react-query';
 export async function getStaticPaths() {
 	const res = await getAllQuests();
 	const questData = await res.data;
-	const paths = questData.map((quest) => {
+	const paths = questData.map((quest: QuestProps) => {
 		return {
 			params: {
 				id: `${quest.id}`
@@ -42,6 +41,12 @@ export async function getStaticPaths() {
 		fallback: false
 	};
 }
+
+export const getStaticProps = async ({ id }) => {
+	const res = await getQuestData(1);
+	const questData = await res.data;
+	return { props: { questData } };
+};
 
 export default function Quest({ questData }) {
 	let data = questData;
@@ -143,10 +148,3 @@ export default function Quest({ questData }) {
 		</div>
 	);
 }
-
-export const getStaticProps = async ({ id }) => {
-	console.log('idisids', id);
-	const res = await getQuestData(1);
-	const questData = await res.data;
-	return { props: { questData } };
-};

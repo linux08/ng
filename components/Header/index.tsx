@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import * as React from 'react';
 import NodeGuardianLogo from '@assets/node-guardian.svg';
-import { NavStyles } from './HeaderStyles';
+import { NavStyles } from '../../styles/HeaderStyles';
 
 export const Header = () => {
 	return (

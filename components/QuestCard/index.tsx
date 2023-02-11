@@ -11,24 +11,32 @@ import {
 	QuestSkill,
 	QuestValue,
 	DifficultyLevel
-} from './QuestCardStyles';
+} from '../../styles/QuestCardStyles';
 import SwordActive from '@/assets/SwordActive';
 import SwordInActive from '@/assets/SwordInActive';
-import { QuestProps } from '@/interfaces/quests.interface';
+import { QuestProps } from '../../interfaces/quest.interface';
 
 export const QuestCardComp: React.FC<any> = ({ quests }) => {
-	const [show, setShow] = React.useState(false);
-	const [questId, setQuestId] = React.useState(1);
 	const truncate = (description: string) => {
 		const newDescription = description.substring(0, 10);
 		return `${newDescription}.`;
 	};
 
+	if (!quests) {
+		return <div> loading </div>;
+	}
+
 	return (
 		<Container>
 			{quests &&
-				quests?.map((quest: QuestProps, ind) => (
-					<Link key={ind} href={`quests/${quest?.id}`}>
+				quests?.map((quest: QuestProps, ind: number) => (
+					<Link
+						style={{
+							textDecoration: 'none'
+						}}
+						key={ind}
+						href={`quests/${quest?.id}`}
+					>
 						<QuestCard>
 							<Image
 								src={quest?.cover}
