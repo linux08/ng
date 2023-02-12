@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import { Header } from '@/components/Header';
 import { QuestCardComp } from '@/components/QuestCard';
@@ -15,20 +14,14 @@ const Home: React.FC<IQuests> = ({ quests }) => {
 	});
 
 	if (status === 'error') {
-		return <div>Error fetching data</div>;
+		return <div data-testid='error-message'>Error fetching data</div>;
 	}
 
 	return (
 		<>
-			<Head>
-				<title>Node Guardians</title>
-				<meta name='description' content='Node Guardians frontend' />
-			</Head>
-
-			<Header />
-
+			<Header data-testid='header' />
 			<MainQuestGridStyles>
-				<QuestCardComp quests={data} />
+				<QuestCardComp data-testid='quest-card' quests={data || []} />
 			</MainQuestGridStyles>
 		</>
 	);

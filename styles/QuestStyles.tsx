@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darkTheme } from './theme';
 
 export const MWrapper = styled.div`
 	position: fixed;
@@ -14,7 +15,7 @@ export const Content = styled.div`
 	position: relative;
 	width: 755px;
 	height: 635px;
-	background: #1d1c1a;
+	background: ${darkTheme.colors.lighterBlack};
 	border: 1px solid rgba(58, 58, 58, 0.5);
 	border-radius: 10px;
 	padding: 5px;

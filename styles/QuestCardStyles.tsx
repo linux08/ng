@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darkTheme } from './theme';
 
 export const Container = styled.div`
 	width: 100%;
@@ -60,7 +61,7 @@ export const QuestProperty = styled.p`
 	font-style: normal;
 	font-weight: 400;
 	font-size: 12px;
-	color: #bea77e;
+	color: ${darkTheme.colors.gold};
 	display: flex;
 	align-items: flex-start;
 	margin-right: 10px;
@@ -73,7 +74,7 @@ export const QuestSkill = styled.p`
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 14px;
-	color: #98a7f5;
+	color: ${darkTheme.colors.blue};
 	text-align: left;
 `;
 

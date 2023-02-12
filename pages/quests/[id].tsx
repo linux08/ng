@@ -51,17 +51,16 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export default function Quest({ questData }) {
-	let data = questData;
+	const { data, status } = useQuery({
+		queryKey: ['questData'],
+		queryFn: getQuestData,
+		initialData: questData
+	});
 	const router = useRouter();
 
 	return (
-		<div>
-			<Head>
-				<title>Node Guardians</title>
-				<meta name='description' content='Node Guardians frontend' />
-			</Head>
-
-			<Header />
+		<>
+			<Header data-testid='header' />
 
 			<MWrapper>
 				<Content>
@@ -147,6 +146,6 @@ export default function Quest({ questData }) {
 					</Footer>
 				</Content>
 			</MWrapper>
-		</div>
+		</>
 	);
 }
