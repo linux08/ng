@@ -27,7 +27,7 @@ export const QuestCardComp: React.FC<any> = ({ quests }) => {
 	}
 
 	return (
-		<Container>
+		<Container data-testid='quest-card'>
 			{quests &&
 				quests?.map((quest: QuestProps, ind: number) => (
 					<Link

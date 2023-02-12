@@ -13,8 +13,8 @@ export const Header = () => {
 				<title>Node Guardians</title>
 				<meta name='description' content='Node Guardians frontend' />
 			</Head>
-			<div onClick={() => router.push('/')}>
-				<Image src={NodeGuardianLogo} width={285} height={35} alt='Node Guardian Image' />
+			<div data-testid='header' onClick={() => router.push('/')}>
+				<Image data-testid='headerlogo' src={NodeGuardianLogo} width={285} height={35} alt='Node Guardian Image' />
 			</div>
 		</NavStyles>
 	);

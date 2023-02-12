@@ -19,9 +19,9 @@ const Home: React.FC<IQuests> = ({ quests }) => {
 
 	return (
 		<>
-			<Header data-testid='header' />
+			<Header />
 			<MainQuestGridStyles>
-				<QuestCardComp data-testid='quest-card' quests={data || []} />
+				<QuestCardComp quests={data || []} />
 			</MainQuestGridStyles>
 		</>
 	);
